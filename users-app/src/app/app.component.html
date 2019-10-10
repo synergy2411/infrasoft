@@ -1,3 +1,10 @@
 <h1>It's working!</h1>
 <br>
-<app-users></app-users>
+<input type="text" [(ngModel)] = "title">
+
+<button (click)="showDiv = !showDiv">Toggle</button>
+
+<div *ngIf="showDiv">
+    <app-users [title] = "title"></app-users>
+</div>
+

@@ -1,6 +1,6 @@
 <div class="container">
   <ul class="list-unstyled">
-    <li class="well">
+    <li class="well" *ngFor="let user of users">
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2">
           <app-user-img
@@ -8,7 +8,9 @@
             [xyz]="user"></app-user-img>
         </div>
         <div class="col-xs-9 col-sm-9 col-md-9">
-          <app-user-info [user] = "user"></app-user-info>
+          <app-user-info [user] = "user">
+            <p>This is isolated paragraph!</p>
+          </app-user-info>
         </div>
       </div>
     </li>

@@ -1,6 +1,16 @@
+<ng-content></ng-content>
 <h1>{{user.firstName}} {{ user.lastName}}</h1>
-<p>Income : <span [innerText]="user.income"></span></p>
-<p>Date of Birth : {{ user.dob }} </p>
+<p *ngIf="user.isWorking">Income : <span [innerText]="user.income"></span></p>
+
+
+
+<!-- <p [ngClass] = "['border', 'feature']">Date of Birth : {{ user.dob }} </p> -->
+
+<button class="btn btn-primary btn-sm" (click)="onToggle()">Toggle</button>
+<p [ngClass] = "dynamicClasses">Date of Birth : {{ user.dob }} </p>
+
+
+
 <p>
   Total Votes : {{ user.vote}}
   <input type="text" [value]="user.vote" (keyup)="user.vote = $event.target.value">

@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class UserInfoComponent {
   @Input('user') user : any;
+  dynamicClasses  = {'border' : true, 'feature' : false}
+
+  onToggle(){
+    this.dynamicClasses.border = !this.dynamicClasses.border
+    this.dynamicClasses.feature = !this.dynamicClasses.feature
+  }
 }
