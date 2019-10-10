@@ -1,0 +1,11 @@
+www.surveymonkey.com/r/897H2ZH
+
+npm install -g typescript
+> tsc --version
+> tsc <fileName>
+
+npm install -g @angular/cli
+> ng --version
+> ng new <project-name>
+> cd <project-name>
+> ng serve [--open] [--port=9090]
