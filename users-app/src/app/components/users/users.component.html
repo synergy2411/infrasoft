@@ -1,12 +1,16 @@
-<div>
-
-  <ul>
-    <li>
-      <img [src]="user.image" alt="">
-      <h1>{{user.firstName}} {{ user.lastName}}</h1>
-      <p>Income : <span [innerText]="user.income"></span></p>
-      <p>Date of Birth : {{ user.dob }} </p>
+<div class="container">
+  <ul class="list-unstyled">
+    <li class="well">
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2">
+          <app-user-img
+            (childEvent)="moreInfo($event)"
+            [xyz]="user"></app-user-img>
+        </div>
+        <div class="col-xs-9 col-sm-9 col-md-9">
+          <app-user-info [user] = "user"></app-user-info>
+        </div>
+      </div>
     </li>
   </ul>
-
 </div>

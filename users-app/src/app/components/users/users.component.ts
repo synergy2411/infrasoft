@@ -7,14 +7,19 @@ import { Component } from '@angular/core';
 })
 export class UsersComponent{
 
-  user = {
+  user : any = {
     firstName : "Bill",
     lastName : "Gates",
     income : 50000,
     dob : new Date("Jan 12, 1965"),
     isWorking : true,
     company : "Microsoft",
-    image : './assets/images/bill.jpg'
+    image : './assets/images/bill.jpg',
+    vote : 110
+  }
+
+  moreInfo(usr : any){
+    alert(`${usr.firstName} is working with ${usr.company}!!!!`)
   }
 
 }
