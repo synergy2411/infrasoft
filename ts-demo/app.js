@@ -1,6 +1,8 @@
+"use strict";
 // Classes & Inheritance
 // Module system
 // Arrow functions
+exports.__esModule = true;
 // var numbers = [1,2,3,4,5];
 // var doubleArray = numbers.map(function(value){
 //     return value * 2;
@@ -63,18 +65,11 @@
 // Decorators
 // @NgModule({
 // })
-var Student = /** @class */ (function () {
-    function Student(firstName, lastName, age) {
-        this.firstName = firstName;
-        this.age = age;
-        this.lastName = lastName;
-    }
-    Student.prototype.sayHi = function () {
-        return "Hello " + this.firstName + " " + this.lastName;
-    };
-    return Student;
-}());
-var foo = new Student("Foo", "Bar", 32);
+var student_1 = require("./student");
+var foo = new student_1.Student("Foo", "Bar", 32);
 console.log(foo.sayHi());
 // Additional types
 // void , enum, any
+var x = "Something";
+x = true;
+x = 32;

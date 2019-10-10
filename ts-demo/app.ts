@@ -152,19 +152,7 @@
 // @NgModule({
 
 // })
-class Student{
-    private firstName : string;
-    private lastName : string;
-    private age : number;
-    constructor(firstName : string, lastName : string, age : number){
-        this.firstName = firstName;
-        this.age = age;
-        this.lastName = lastName;
-    }
-    sayHi(): string{
-        return "Hello "+  this.firstName + " " + this.lastName;
-    }
-}
+import { Student } from './student';
 let foo = new Student("Foo", "Bar", 32);
 console.log(foo.sayHi());
 
@@ -173,3 +161,8 @@ console.log(foo.sayHi());
 
 // Additional types
 // void , enum, any
+
+// let x : any = "Something";
+// x = true;
+
+// x = 32;
