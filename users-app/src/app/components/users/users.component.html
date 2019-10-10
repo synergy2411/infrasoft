@@ -1,1 +1,12 @@
-<h2>Users Loaded!</h2>
+<div>
+
+  <ul>
+    <li>
+      <img [src]="user.image" alt="">
+      <h1>{{user.firstName}} {{ user.lastName}}</h1>
+      <p>Income : <span [innerText]="user.income"></span></p>
+      <p>Date of Birth : {{ user.dob }} </p>
+    </li>
+  </ul>
+
+</div>
