@@ -1,17 +1,21 @@
+
 <ng-content></ng-content>
 
-<h1 appHighlight [myColor] = "'yellow'">{{user.firstName}} {{ user.lastName}}</h1>
+<p>Output : {{ output | async | uppercase }}</p>
 
-<p *ngIf="user.isWorking">Income : <span [innerText]="user.income"></span></p>
+<h1 appHighlight [myColor]="'yellow'">
+  {{user.firstName | uppercase }} {{ user.lastName | uppercase}}</h1>
 
-
+<p *ngIf="user.isWorking">
+  Income : <span [innerText]="user.income | currency : 'INR'"></span></p>
 
 <!-- <p [ngClass] = "['border', 'feature']">Date of Birth : {{ user.dob }} </p> -->
 
 <button class="btn btn-primary btn-sm" (click)="onToggle()">Toggle</button>
-<p [ngClass] = "dynamicClasses">Date of Birth : {{ user.dob }} </p>
+<p [ngClass]="dynamicClasses">
+  Date of Birth : {{ user.dob | date : 'MMM/dd/yyyy'}} </p>
 
-
+<p>Contact Number : {{ user.contact_no | countryCode : 'US'}}</p>
 
 <p>
   Total Votes : {{ user.vote}}

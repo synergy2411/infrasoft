@@ -7,6 +7,8 @@ import { UsersComponent } from './components/users/users.component';
 import { UserImgComponent } from './components/users/user-img/user-img.component';
 import { UserInfoComponent } from './components/users/user-info/user-info.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { CountryCodePipe } from './pipes/country-code.pipe';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { HighlightDirective } from './directives/highlight.directive';
     UsersComponent,
     UserImgComponent,
     UserInfoComponent,
-    HighlightDirective
+    HighlightDirective,
+    CountryCodePipe
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

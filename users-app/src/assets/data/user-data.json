@@ -1,0 +1,37 @@
+{
+  "userdata": [
+    {
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "income": 50000,
+      "dob": "1965-01-11T18:30:00.000Z",
+      "isWorking": true,
+      "company": "Microsoft",
+      "image": "./assets/images/bill.jpg",
+      "vote": 110,
+      "contact_no": 7896543332
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Jojbs",
+      "income": 0,
+      "dob": "1965-02-01T18:30:00.000Z",
+      "isWorking": false,
+      "company": "Microsoft",
+      "image": "./assets/images/steve.png",
+      "vote": 120,
+      "contact_no": 9876541280
+    },
+    {
+      "firstName": "Tim B.",
+      "lastName": "Lee",
+      "income": 30000,
+      "dob": "1965-12-11T18:30:00.000Z",
+      "isWorking": true,
+      "company": "World Wide Web",
+      "image": "./assets/images/tim.jpg",
+      "vote": 90,
+      "contact_no": 987654321
+    }
+  ]
+}

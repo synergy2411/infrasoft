@@ -13,4 +13,17 @@ export class UserInfoComponent {
     this.dynamicClasses.border = !this.dynamicClasses.border
     this.dynamicClasses.feature = !this.dynamicClasses.feature
   }
+
+  // output = new Promise((resolve, reject) => {
+  //   setTimeout( () => {
+  //     resolve("Here the data comes....");
+  //   }, 3000);
+  // });
+
+  output = new Promise(function(resolve, reject){
+    setTimeout( function(){
+      resolve("Here the data comes....");
+    }, 3000);
+  });
+
 }

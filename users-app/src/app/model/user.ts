@@ -7,4 +7,5 @@ export interface User {
   company: string;
   image: string;
   vote: number;
+  contact_no : number;
 }
