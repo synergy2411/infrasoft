@@ -1,4 +1,6 @@
 www.surveymonkey.com/r/897H2ZH
+www.surveymonkey.com/r/89H875X
+
 
 npm install -g typescript
 > tsc --version
@@ -8,4 +10,12 @@ npm install -g @angular/cli
 > ng --version
 > ng new <project-name>
 > cd <project-name>
-> ng serve [--open] [--port=9090]
+> ng serve [--open] [--port=9090] [--style=sass] [--routing]
+> npm install bootstrap@3 --save
+
+>ng generate component <comp-name>
+> ng g c components/users/user-img <comp-name>
+> ng g d <directive-name>
+> ng g m <module-name>
+> ng g p <pipe-name>
+> ng g s <service-name>
