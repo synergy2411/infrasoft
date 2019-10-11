@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy {
+export class UsersComponent{
 
   @Input('title') title: string;
 
@@ -22,7 +22,15 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   ngOnInit() {
     // console.log("ngOnInit");
     // this.users = USER_DATA;
-    this.users = this.dataService.getUserData();
+    // this.users = this.dataService.getUserData();
+    this.dataService.getApiData()
+    .subscribe(
+      response => {
+      console.log(response);
+      this.users = <User[]>response;
+    },
+    err => console.log(err),
+    () => {console.log("COMPLETED")});
   }
   // ngDoCheck() { console.log("ngDoCheck") }
   // ngAfterContentInit() { console.log("ngAfterContentInit") }
