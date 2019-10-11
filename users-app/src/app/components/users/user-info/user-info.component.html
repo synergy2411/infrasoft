@@ -1,5 +1,7 @@
 <ng-content></ng-content>
-<h1>{{user.firstName}} {{ user.lastName}}</h1>
+
+<h1 appHighlight [myColor] = "'yellow'">{{user.firstName}} {{ user.lastName}}</h1>
+
 <p *ngIf="user.isWorking">Income : <span [innerText]="user.income"></span></p>
 
 

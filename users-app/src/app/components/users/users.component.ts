@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: "app-users",
@@ -9,7 +10,7 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
 
   @Input('title') title : string;
 
-  users: any[] = [{
+  users: User[] = [{
     firstName: "Bill",
     lastName: "Gates",
     income: 50000,
@@ -38,7 +39,7 @@ export class UsersComponent implements OnChanges, OnInit, DoCheck, AfterContentI
     vote: 90
   }]
 
-  moreInfo(usr: any) {
+  moreInfo(usr: User) {
     alert(`${usr.firstName} is working with ${usr.company}!!!!`)
   }
   constructor(){console.log("Constructor", this.title)}
