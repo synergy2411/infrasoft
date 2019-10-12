@@ -25,7 +25,10 @@ export class FavoritePage implements OnInit {
 
   onQuoteSelect(quote: IQuote){
     this.modalCtrl.create({
-      component : QuotePage
+      component : QuotePage,
+      componentProps: {
+        quote : quote
+      }
     }).then(modal => {
       modal.present();
     })

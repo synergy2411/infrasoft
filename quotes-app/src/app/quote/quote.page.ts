@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { IQuote } from '../model/quote.model';
 
 @Component({
   selector: 'app-quote',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotePage implements OnInit {
 
+  @Input('quote') quote : IQuote;
+
   constructor() { }
 
   ngOnInit() {
+    // console.log("[QUOTE]", this.quote);
   }
+ 
 
 }

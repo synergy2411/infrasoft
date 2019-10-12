@@ -1,9 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>quote</ion-title>
+    <ion-title>Quotes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{quote.person}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        {{quote.text}}
+      </p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="danger" expand="full" fill="clear" size="large">
+              Make it Unfavorite
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-button color="primary" expand="full" fill="clear" size="large">
+              Close
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>
