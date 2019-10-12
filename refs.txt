@@ -1,6 +1,10 @@
 www.surveymonkey.com/r/897H2ZH
 www.surveymonkey.com/r/89H875X
+github.com/synergy2411/infrasoft
 
+Install node from https://nodejs.org (Recommended version)
+> node -v ()
+> npm -v
 
 npm install -g typescript
 > tsc --version
@@ -19,3 +23,10 @@ npm install -g @angular/cli
 > ng g m <module-name>
 > ng g p <pipe-name>
 > ng g s <service-name>
+> npm install serve -g
+> serve
+
+
+> npm install ionic cordova -g
+> ionic --version / ionic info
+> ionic start
