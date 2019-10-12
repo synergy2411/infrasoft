@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Your Favorite Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list> 
+    <ion-item *ngFor="let collection of quotesData" 
+      (click)="onCategorySelect(collection)"> 
+      <ion-icon [name]="collection.icon" class="ion-margin"></ion-icon>
+      <ion-label>
+        {{collection.category | uppercase }}
+        <br>
+        <p [ngStyle]="{'fontSize' : '0.8em'}">{{ collection.quotes.length }} Quotes</p>
+      </ion-label>  
+
+    </ion-item>  
+  </ion-list>
+
+</ion-content>

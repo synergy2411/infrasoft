@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/library"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quotes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- {{ selectedCategory | json}} -->
+
+  <div *ngIf="selectedCategory">
+    <ion-card *ngFor="let quote of selectedCategory.quotes">
+      <ion-card-content>
+        <em>{{quote.text}}</em>
+        <br>
+        <ion-label class="ion-float-right" [ngStyle]="{'color' : 'darkgrey'}">
+          -{{quote.person | uppercase}}
+        </ion-label>
+        <br>
+        <ion-grid>
+          <ion-row *ngIf="!isQuoteSeleted(quote)">
+            <ion-col>
+              <ion-button 
+                (click) = "onFavorite(quote)"
+                fill="clear" 
+                color="primary"
+                expand="block"> Favorite </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="isQuoteSeleted(quote)">
+            <ion-col>
+              <ion-button 
+              (click) = "onUnfavorite(quote)"
+                fill="clear" 
+                color="danger" 
+                expand="block"> Unfavorite </ion-button>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-grid>
+
+
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
