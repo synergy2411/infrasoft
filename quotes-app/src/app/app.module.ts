@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuoteService } from './services/quote.service';
 import { QuotePage } from './quote/quote.page';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 
@@ -16,6 +17,7 @@ import { QuotePage } from './quote/quote.page';
   entryComponents : [QuotePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
+    Geolocation,
     QuoteService,
     StatusBar,
     SplashScreen,
