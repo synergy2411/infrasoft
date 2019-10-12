@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IQuote } from '../model/quote.model';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-quote',
@@ -10,11 +11,14 @@ export class QuotePage implements OnInit {
 
   @Input('quote') quote : IQuote;
 
-  constructor() { }
+  constructor(private modalCtrl : ModalController) { }
 
   ngOnInit() {
     // console.log("[QUOTE]", this.quote);
   }
  
+  onClose(flag : boolean = false){
+    this.modalCtrl.dismiss(flag);
+  }
 
 }

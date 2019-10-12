@@ -11,26 +11,37 @@ import { QuotePage } from '../quote/quote.page';
 })
 export class FavoritePage implements OnInit {
 
-  favQuotes : IQuote[] = [];
-  
-  constructor(private quoteService : QuoteService,
-              private modalCtrl : ModalController) { }
+  favQuotes: IQuote[] = [];
+
+  constructor(private quoteService: QuoteService,
+    private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
 
-  ionViewWillEnter(){
-    this.favQuotes = this.quoteService.getFavQuotes();
+  ionViewWillEnter() {
+    this.populateModel();
   }
 
-  onQuoteSelect(quote: IQuote){
+  private populateModel() {
+    this.favQuotes = this.quoteService.getFavQuotes();
+  }
+  
+  onQuoteSelect(quote: IQuote) {
     this.modalCtrl.create({
-      component : QuotePage,
+      component: QuotePage,
       componentProps: {
-        quote : quote
+        quote: quote
       }
     }).then(modal => {
       modal.present();
+      modal.onDidDismiss()
+        .then(response => {
+          if (response.data) {
+            this.quoteService.removeQuoteFromFavorite(quote);
+            this.populateModel();
+          }
+        })
     })
   }
 }

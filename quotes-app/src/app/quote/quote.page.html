@@ -18,7 +18,10 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button color="danger" expand="full" fill="clear" size="large">
+            <ion-button 
+              (click) = "onClose(true)"
+              color="danger" 
+              expand="full" fill="clear" size="large">
               Make it Unfavorite
             </ion-button>
           </ion-col>
@@ -26,7 +29,12 @@
 
         <ion-row>
           <ion-col>
-            <ion-button color="primary" expand="full" fill="clear" size="large">
+            <ion-button 
+              (click) = "onClose()"
+              color="primary" 
+              expand="full" 
+              fill="clear" 
+              size="large">
               Close
             </ion-button>
           </ion-col>
