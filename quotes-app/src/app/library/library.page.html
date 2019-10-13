@@ -5,9 +5,6 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
-  {{quotesData | json }}
-
   <ion-list>
     <ion-item *ngFor="let collection of quotesData" (click)="onCategorySelect(collection)">
       <ion-icon [name]="collection.icon" class="ion-margin"></ion-icon>

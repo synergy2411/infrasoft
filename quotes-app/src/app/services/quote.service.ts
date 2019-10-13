@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { IQuote } from '../model/quote.model';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class QuoteService{
@@ -8,6 +10,16 @@ export class QuoteService{
 
     private favQuotes : IQuote[] = [];
 
+    constructor(private httpClient : HttpClient,
+                private authService : AuthService){}
+
+    getQuotesData(){
+        return this.httpClient
+        .get("https://cnx-demo.firebaseio.com/quotesdata.json",{
+            params : new HttpParams().set("auth", this.authService.getToken() )
+        })
+    }
+    
     getFavQuotes(){
         return this.favQuotes.slice(0);
     }

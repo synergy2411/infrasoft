@@ -11,16 +11,19 @@ import { QuoteService } from '../services/quote.service';
 })
 export class LibraryPage implements OnInit {
 
-  quotesData : {category : string, quotes : IQuote[], icon : string}[] = [];
+  quotesData: { category: string, quotes: IQuote[], icon: string }[] = [];
 
-  constructor(private router : Router, 
-              private quoteService : QuoteService) { }
+  constructor(private router: Router,
+    private quoteService: QuoteService) { }
 
   ngOnInit() {
-    this.quotesData = QUOTES_DATA;
+    this.quoteService.getQuotesData()
+      .subscribe(response => {
+        this.quotesData = <{ category: string, quotes: IQuote[], icon: string }[]>response;
+      });
   }
 
-  onCategorySelect(collection: {category : string, quotes : IQuote[], icon : string} ){
+  onCategorySelect(collection: { category: string, quotes: IQuote[], icon: string }) {
     console.log(collection);
     this.quoteService.setSelectedCategory(collection);
     this.router.navigate(['tabs/quotes']);

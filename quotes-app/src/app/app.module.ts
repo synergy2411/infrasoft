@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { RouteReuseStrategy } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -10,15 +12,18 @@ import { QuoteService } from './services/quote.service';
 import { QuotePage } from './quote/quote.page';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AuthService } from './services/auth.service';
-
-
+import { LoginGaurdService } from './services/login-gaurd.service';
 
 @NgModule({
   declarations: [AppComponent, QuotePage],
   entryComponents : [QuotePage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+      IonicModule.forRoot(), 
+      AppRoutingModule, 
+      HttpClientModule],
   providers: [
     AuthService,
+    LoginGaurdService,
     Geolocation,
     QuoteService,
     StatusBar,
