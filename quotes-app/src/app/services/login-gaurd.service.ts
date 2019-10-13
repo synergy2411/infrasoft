@@ -11,7 +11,6 @@ export class LoginGaurdService implements CanActivate {
             this.router.navigate(['/login'])
             return false;
         }
-        
     }
     constructor(private authService: AuthService,
                 private router : Router) { }

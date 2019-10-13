@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { Camera } from '@ionic-native/camera/ngx';
+import { FCM } from '@ionic-native/fcm/ngx';
 
 import { RouteReuseStrategy } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -24,6 +26,8 @@ import { LoginGaurdService } from './services/login-gaurd.service';
   providers: [
     AuthService,
     LoginGaurdService,
+    Camera,
+    FCM,
     Geolocation,
     QuoteService,
     StatusBar,
